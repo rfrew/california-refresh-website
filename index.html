@@ -152,8 +152,42 @@
     }
     .nav-cta:hover { background: var(--primary-dark); }
 
+    .lang-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      overflow: hidden;
+      background: var(--card);
+    }
+    .lang-toggle button {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted);
+      padding: 6px 12px;
+      letter-spacing: 0.04em;
+      transition: background 0.15s, color 0.15s;
+    }
+    .lang-toggle button.active {
+      background: var(--primary);
+      color: #FFFFFF;
+    }
+    .lang-toggle button:not(.active):hover {
+      background: var(--bg-soft);
+      color: var(--ink);
+    }
+
     @media (max-width: 720px) {
       .nav-links a:not(.nav-cta) { display: none; }
+    }
+    @media (max-width: 540px) {
+      .nav-links { gap: 14px; }
+      .lang-toggle button { padding: 5px 9px; font-size: 0.72rem; }
     }
 
     /* ---------- HERO ---------- */
@@ -626,10 +660,14 @@
         </span>
       </a>
       <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#area">Service Area</a>
-        <a href="#contact" class="nav-cta">Get a Quote</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#area" data-i18n="nav.area">Service Area</a>
+        <a href="#contact" class="nav-cta" data-i18n="nav.cta">Get a Quote</a>
+        <div class="lang-toggle" role="group" aria-label="Language / Idioma">
+          <button type="button" data-lang="en" class="active" aria-label="English">EN</button>
+          <button type="button" data-lang="es" aria-label="Español">ES</button>
+        </div>
       </div>
     </div>
   </nav>
@@ -638,30 +676,30 @@
   <header class="hero">
     <div class="container hero-inner">
       <img src="assets/logo-full.png" alt="California Refresh Cleaning Service" class="hero-logo" />
-      <span class="eyebrow"><span class="eyebrow-dot"></span>Serving San Luis Obispo County</span>
-      <h1>A spotless home, <span class="accent">made simple.</span></h1>
-      <p class="lede">
+      <span class="eyebrow" data-i18n="hero.eyebrow"><span class="eyebrow-dot"></span>Serving San Luis Obispo County</span>
+      <h1 data-i18n="hero.h1">A spotless home, <span class="accent">made simple.</span></h1>
+      <p class="lede" data-i18n="hero.lede">
         Bilingual, female-owned cleaning across SLO County. Honest work, friendly faces, and a home that feels truly fresh — every visit.
       </p>
       <div class="hero-cta">
-        <a href="#contact" class="btn btn-primary">
+        <a href="#contact" class="btn btn-primary" data-i18n="hero.cta.primary">
           Get a Free Quote
           <svg viewBox="0 0 24 24" fill="none" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
-        <a href="#services" class="btn btn-ghost">See Services</a>
+        <a href="#services" class="btn btn-ghost" data-i18n="hero.cta.secondary">See Services</a>
       </div>
       <div class="hero-meta">
         <span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          Female-owned
+          <span data-i18n="hero.meta.female">Female-owned</span>
         </span>
         <span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          Se habla español
+          <span data-i18n="hero.meta.spanish">Se habla español</span>
         </span>
         <span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          Free quotes
+          <span data-i18n="hero.meta.free">Free quotes</span>
         </span>
       </div>
     </div>
@@ -671,34 +709,34 @@
   <section class="about" id="about">
     <div class="container about-grid">
       <div class="about-portrait" role="img" aria-label="Photo of Yesenia G., owner">
-        <div class="placeholder-note">Add a friendly photo of Yesenia here</div>
+        <div class="placeholder-note" data-i18n="about.placeholder">Add a friendly photo of Yesenia here</div>
       </div>
       <div>
-        <span class="eyebrow"><span class="eyebrow-dot"></span>Meet your cleaner</span>
-        <h2>Hi, I'm <span class="accent">Yesenia.</span></h2>
-        <p>
+        <span class="eyebrow" data-i18n="about.eyebrow"><span class="eyebrow-dot"></span>Meet your cleaner</span>
+        <h2 data-i18n="about.h2">Hi, I'm <span class="accent">Yesenia.</span></h2>
+        <p data-i18n="about.p1">
           I started California Refresh because I love what a truly clean home feels like — calm, welcoming, and ready for whatever the day brings. I bring care and attention to every job, and I treat your home the way I'd want mine to be treated.
         </p>
-        <p>
+        <p data-i18n="about.p2">
           I'm bilingual (English &amp; Spanish), small enough to give you personal service, and reliable enough that you'll see the same friendly face every visit.
         </p>
         <div class="signature">— Yesenia G.</div>
         <div class="badge-row">
           <span class="badge">
             <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            Female-owned
+            <span data-i18n="badge.female">Female-owned</span>
           </span>
           <span class="badge">
             <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            Bilingual
+            <span data-i18n="badge.bilingual">Bilingual</span>
           </span>
           <span class="badge">
             <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-11a7 7 0 0 1 14 0c0 6.5-7 11-7 11z"/><circle cx="12" cy="10" r="3"/></svg>
-            Local to SLO County
+            <span data-i18n="badge.local">Local to SLO County</span>
           </span>
           <span class="badge">
             <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            Customer-first
+            <span data-i18n="badge.customer">Customer-first</span>
           </span>
         </div>
       </div>
@@ -709,9 +747,9 @@
   <section id="services">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow"><span class="eyebrow-dot"></span>What I do</span>
-        <h2>Recurring home cleans, done right.</h2>
-        <p>One service, done thoroughly — keep your home consistently fresh on a schedule that works for you.</p>
+        <span class="eyebrow" data-i18n="services.eyebrow"><span class="eyebrow-dot"></span>What I do</span>
+        <h2 data-i18n="services.h2">Recurring home cleans, done right.</h2>
+        <p data-i18n="services.lede">One service, done thoroughly — keep your home consistently fresh on a schedule that works for you.</p>
       </div>
 
       <div class="service-card">
@@ -722,19 +760,19 @@
           </svg>
         </div>
         <div>
-          <span class="service-tag">Most Popular</span>
-          <h3>Standard Recurring Clean</h3>
-          <p>Weekly, bi-weekly, or monthly visits. The same trusted person, every time, with everything your home needs to stay tidy and feel cared for.</p>
+          <span class="service-tag" data-i18n="service.tag">Most Popular</span>
+          <h3 data-i18n="service.title">Standard Recurring Clean</h3>
+          <p data-i18n="service.desc">Weekly, bi-weekly, or monthly visits. The same trusted person, every time, with everything your home needs to stay tidy and feel cared for.</p>
           <ul class="service-list">
-            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Kitchens &amp; appliances (exterior)</li>
-            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Full bathrooms</li>
-            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Dusting &amp; surfaces</li>
-            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Vacuuming &amp; mopping</li>
-            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Bedrooms &amp; living areas</li>
-            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Trash &amp; tidy-up</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> <span data-i18n="service.list.kitchen">Kitchens &amp; appliances (exterior)</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> <span data-i18n="service.list.bathroom">Full bathrooms</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> <span data-i18n="service.list.dust">Dusting &amp; surfaces</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> <span data-i18n="service.list.vacuum">Vacuuming &amp; mopping</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> <span data-i18n="service.list.bedroom">Bedrooms &amp; living areas</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> <span data-i18n="service.list.trash">Trash &amp; tidy-up</span></li>
           </ul>
           <div style="margin-top: 24px;">
-            <a href="#contact" class="btn btn-primary">Request a Free Quote</a>
+            <a href="#contact" class="btn btn-primary" data-i18n="service.cta">Request a Free Quote</a>
           </div>
         </div>
       </div>
@@ -745,37 +783,37 @@
   <section class="why">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow"><span class="eyebrow-dot"></span>Why California Refresh</span>
-        <h2>Cleaning you can count on.</h2>
+        <span class="eyebrow" data-i18n="why.eyebrow"><span class="eyebrow-dot"></span>Why California Refresh</span>
+        <h2 data-i18n="why.h2">Cleaning you can count on.</h2>
       </div>
       <div class="why-grid">
         <div class="why-card">
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
           </div>
-          <h3>Reliable &amp; on time</h3>
-          <p>Same trusted person, same schedule, no surprises.</p>
+          <h3 data-i18n="why.1.title">Reliable &amp; on time</h3>
+          <p data-i18n="why.1.desc">Same trusted person, same schedule, no surprises.</p>
         </div>
         <div class="why-card">
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           </div>
-          <h3>Bilingual service</h3>
-          <p>English or Spanish — talk to me however you're most comfortable.</p>
+          <h3 data-i18n="why.2.title">Bilingual service</h3>
+          <p data-i18n="why.2.desc">English or Spanish — talk to me however you're most comfortable.</p>
         </div>
         <div class="why-card">
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
           </div>
-          <h3>Female-owned</h3>
-          <p>A small, independent business — you're supporting your neighbor, not a chain.</p>
+          <h3 data-i18n="why.3.title">Female-owned</h3>
+          <p data-i18n="why.3.desc">A small, independent business — you're supporting your neighbor, not a chain.</p>
         </div>
         <div class="why-card">
           <div class="icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           </div>
-          <h3>Personal touch</h3>
-          <p>I take time to learn your home. The little things matter — and I notice them.</p>
+          <h3 data-i18n="why.4.title">Personal touch</h3>
+          <p data-i18n="why.4.desc">I take time to learn your home. The little things matter — and I notice them.</p>
         </div>
       </div>
     </div>
@@ -785,8 +823,8 @@
   <section id="area">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow"><span class="eyebrow-dot"></span>Service Area</span>
-        <h2>Proudly cleaning across San Luis Obispo County.</h2>
+        <span class="eyebrow" data-i18n="area.eyebrow"><span class="eyebrow-dot"></span>Service Area</span>
+        <h2 data-i18n="area.h2">Proudly cleaning across San Luis Obispo County.</h2>
       </div>
       <div class="area-cities">
         <span class="city-pill">San Luis Obispo</span>
@@ -804,7 +842,7 @@
         <span class="city-pill">Avila Beach</span>
         <span class="city-pill">Santa Margarita</span>
       </div>
-      <p class="area-note">Don't see your town? Just ask — happy to travel for the right fit.</p>
+      <p class="area-note" data-i18n="area.note">Don't see your town? Just ask — happy to travel for the right fit.</p>
     </div>
   </section>
 
@@ -812,13 +850,13 @@
   <section class="contact" id="contact">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow"><span class="eyebrow-dot"></span>Get in touch</span>
-        <h2>Request your free quote.</h2>
-        <p>Tell me a bit about your home and what you're looking for. I'll get back to you within one business day.</p>
+        <span class="eyebrow" data-i18n="contact.eyebrow"><span class="eyebrow-dot"></span>Get in touch</span>
+        <h2 data-i18n="contact.h2">Request your free quote.</h2>
+        <p data-i18n="contact.lede">Tell me a bit about your home and what you're looking for. I'll get back to you within one business day.</p>
       </div>
 
       <div class="contact-card">
-        <div class="form-success" id="formSuccess" role="status" aria-live="polite">
+        <div class="form-success" id="formSuccess" role="status" aria-live="polite" data-i18n="form.success">
           ¡Gracias! Thanks for reaching out — I'll be in touch within one business day.
         </div>
 
@@ -846,45 +884,45 @@
         >
           <div class="form-row">
             <div class="field">
-              <label for="name">Name <span class="req">*</span></label>
+              <label for="name"><span data-i18n="form.name">Name</span> <span class="req">*</span></label>
               <input id="name" name="name" type="text" required autocomplete="name" />
             </div>
             <div class="field">
-              <label for="phone">Phone</label>
+              <label for="phone" data-i18n="form.phone">Phone</label>
               <input id="phone" name="phone" type="tel" autocomplete="tel" />
             </div>
           </div>
           <div class="field">
-            <label for="email">Email <span class="req">*</span></label>
+            <label for="email"><span data-i18n="form.email">Email</span> <span class="req">*</span></label>
             <input id="email" name="email" type="email" required autocomplete="email" />
           </div>
           <div class="form-row">
             <div class="field">
-              <label for="city">City</label>
-              <input id="city" name="city" type="text" placeholder="e.g. San Luis Obispo" />
+              <label for="city" data-i18n="form.city">City</label>
+              <input id="city" name="city" type="text" placeholder="e.g. San Luis Obispo" data-i18n-placeholder="form.city.placeholder" />
             </div>
             <div class="field">
-              <label for="frequency">Cleaning frequency</label>
+              <label for="frequency" data-i18n="form.frequency">Cleaning frequency</label>
               <select id="frequency" name="frequency">
-                <option value="">Not sure yet</option>
-                <option>Weekly</option>
-                <option>Bi-weekly</option>
-                <option>Monthly</option>
-                <option>One-time</option>
+                <option value="" data-i18n="form.freq.notsure">Not sure yet</option>
+                <option data-i18n="form.freq.weekly">Weekly</option>
+                <option data-i18n="form.freq.biweekly">Bi-weekly</option>
+                <option data-i18n="form.freq.monthly">Monthly</option>
+                <option data-i18n="form.freq.onetime">One-time</option>
               </select>
             </div>
           </div>
           <div class="field">
-            <label for="message">Tell me about your home <span class="req">*</span></label>
-            <textarea id="message" name="message" required placeholder="Bedrooms, bathrooms, square footage if you know it, and anything special I should know."></textarea>
+            <label for="message"><span data-i18n="form.message">Tell me about your home</span> <span class="req">*</span></label>
+            <textarea id="message" name="message" required placeholder="Bedrooms, bathrooms, square footage if you know it, and anything special I should know." data-i18n-placeholder="form.message.placeholder"></textarea>
           </div>
 
           <!-- Honeypot to deter bots -->
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
 
           <div class="form-foot">
-            <span class="form-note">I'll reply within one business day.</span>
-            <button type="submit" class="btn submit-btn">
+            <span class="form-note" data-i18n="form.note">I'll reply within one business day.</span>
+            <button type="submit" class="btn submit-btn" data-i18n="form.send">
               Send Request
               <svg viewBox="0 0 24 24" fill="none" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </button>
@@ -902,32 +940,238 @@
           <div class="footer-logo">
             <img src="assets/logo-white.png" alt="California Refresh Cleaning Service" />
           </div>
-          <p style="margin-top: 12px; max-width: 360px;">
+          <p style="margin-top: 12px; max-width: 360px;" data-i18n="footer.tagline">
             Friendly, reliable home cleaning across San Luis Obispo County. Owned and run by Yesenia G.
           </p>
         </div>
         <div>
-          <h4>Explore</h4>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#area">Service Area</a>
-          <a href="#contact">Contact</a>
+          <h4 data-i18n="footer.explore">Explore</h4>
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#services" data-i18n="nav.services">Services</a>
+          <a href="#area" data-i18n="nav.area">Service Area</a>
+          <a href="#contact" data-i18n="footer.contact">Contact</a>
         </div>
         <div>
-          <h4>Contact</h4>
+          <h4 data-i18n="footer.contact">Contact</h4>
           <a href="mailto:ca.refreshcleaning1@gmail.com">ca.refreshcleaning1@gmail.com</a>
-          <a href="#contact">Request a quote</a>
+          <a href="#contact" data-i18n="footer.quote">Request a quote</a>
           <p style="margin-top: 8px; font-size: 0.85rem; color: rgba(250, 247, 242, 0.5);">Se habla español</p>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© <span id="year"></span> California Refresh Cleaning Service. All rights reserved.</span>
-        <span>Made with care in San Luis Obispo County.</span>
+        <span><span data-i18n="footer.copyright.prefix">©</span> <span id="year"></span> <span data-i18n="footer.copyright">California Refresh Cleaning Service. All rights reserved.</span></span>
+        <span data-i18n="footer.made">Made with care in San Luis Obispo County.</span>
       </div>
     </div>
   </footer>
 
   <script>
+    // ========== i18n: English / Spanish ==========
+    const translations = {
+      en: {
+        'meta.title': 'California Refresh Cleaning Service — Friendly, Reliable Home Cleaning in San Luis Obispo County',
+        'meta.description': 'Bilingual, female-owned home cleaning in San Luis Obispo County. Recurring weekly, bi-weekly, and monthly cleans. Owned by Yesenia G. — friendly, thorough, customer-first.',
+        'nav.about': 'About',
+        'nav.services': 'Services',
+        'nav.area': 'Service Area',
+        'nav.cta': 'Get a Quote',
+        'hero.eyebrow': '<span class="eyebrow-dot"></span>Serving San Luis Obispo County',
+        'hero.h1': 'A spotless home, <span class="accent">made simple.</span>',
+        'hero.lede': 'Bilingual, female-owned cleaning across SLO County. Honest work, friendly faces, and a home that feels truly fresh — every visit.',
+        'hero.cta.primary': 'Get a Free Quote <svg viewBox="0 0 24 24" fill="none" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>',
+        'hero.cta.secondary': 'See Services',
+        'hero.meta.female': 'Female-owned',
+        'hero.meta.spanish': 'Se habla español',
+        'hero.meta.free': 'Free quotes',
+        'about.placeholder': 'Add a friendly photo of Yesenia here',
+        'about.eyebrow': '<span class="eyebrow-dot"></span>Meet your cleaner',
+        'about.h2': 'Hi, I’m <span class="accent">Yesenia.</span>',
+        'about.p1': 'I started California Refresh because I love what a truly clean home feels like — calm, welcoming, and ready for whatever the day brings. I bring care and attention to every job, and I treat your home the way I’d want mine to be treated.',
+        'about.p2': 'I’m bilingual (English &amp; Spanish), small enough to give you personal service, and reliable enough that you’ll see the same friendly face every visit.',
+        'badge.female': 'Female-owned',
+        'badge.bilingual': 'Bilingual',
+        'badge.local': 'Local to SLO County',
+        'badge.customer': 'Customer-first',
+        'services.eyebrow': '<span class="eyebrow-dot"></span>What I do',
+        'services.h2': 'Recurring home cleans, done right.',
+        'services.lede': 'One service, done thoroughly — keep your home consistently fresh on a schedule that works for you.',
+        'service.tag': 'Most Popular',
+        'service.title': 'Standard Recurring Clean',
+        'service.desc': 'Weekly, bi-weekly, or monthly visits. The same trusted person, every time, with everything your home needs to stay tidy and feel cared for.',
+        'service.list.kitchen': 'Kitchens &amp; appliances (exterior)',
+        'service.list.bathroom': 'Full bathrooms',
+        'service.list.dust': 'Dusting &amp; surfaces',
+        'service.list.vacuum': 'Vacuuming &amp; mopping',
+        'service.list.bedroom': 'Bedrooms &amp; living areas',
+        'service.list.trash': 'Trash &amp; tidy-up',
+        'service.cta': 'Request a Free Quote',
+        'why.eyebrow': '<span class="eyebrow-dot"></span>Why California Refresh',
+        'why.h2': 'Cleaning you can count on.',
+        'why.1.title': 'Reliable &amp; on time',
+        'why.1.desc': 'Same trusted person, same schedule, no surprises.',
+        'why.2.title': 'Bilingual service',
+        'why.2.desc': 'English or Spanish — talk to me however you’re most comfortable.',
+        'why.3.title': 'Female-owned',
+        'why.3.desc': 'A small, independent business — you’re supporting your neighbor, not a chain.',
+        'why.4.title': 'Personal touch',
+        'why.4.desc': 'I take time to learn your home. The little things matter — and I notice them.',
+        'area.eyebrow': '<span class="eyebrow-dot"></span>Service Area',
+        'area.h2': 'Proudly cleaning across San Luis Obispo County.',
+        'area.note': 'Don’t see your town? Just ask — happy to travel for the right fit.',
+        'contact.eyebrow': '<span class="eyebrow-dot"></span>Get in touch',
+        'contact.h2': 'Request your free quote.',
+        'contact.lede': 'Tell me a bit about your home and what you’re looking for. I’ll get back to you within one business day.',
+        'form.success': '¡Gracias! Thanks for reaching out — I’ll be in touch within one business day.',
+        'form.name': 'Name',
+        'form.phone': 'Phone',
+        'form.email': 'Email',
+        'form.city': 'City',
+        'form.city.placeholder': 'e.g. San Luis Obispo',
+        'form.frequency': 'Cleaning frequency',
+        'form.freq.notsure': 'Not sure yet',
+        'form.freq.weekly': 'Weekly',
+        'form.freq.biweekly': 'Bi-weekly',
+        'form.freq.monthly': 'Monthly',
+        'form.freq.onetime': 'One-time',
+        'form.message': 'Tell me about your home',
+        'form.message.placeholder': 'Bedrooms, bathrooms, square footage if you know it, and anything special I should know.',
+        'form.note': 'I’ll reply within one business day.',
+        'form.send': 'Send Request <svg viewBox="0 0 24 24" fill="none" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>',
+        'footer.tagline': 'Friendly, reliable home cleaning across San Luis Obispo County. Owned and run by Yesenia G.',
+        'footer.explore': 'Explore',
+        'footer.contact': 'Contact',
+        'footer.quote': 'Request a quote',
+        'footer.copyright.prefix': '©',
+        'footer.copyright': 'California Refresh Cleaning Service. All rights reserved.',
+        'footer.made': 'Made with care in San Luis Obispo County.',
+        'form.error.fail': 'Something went wrong sending your message. Please try again or email ca.refreshcleaning1@gmail.com.',
+        'form.error.network': 'Network error. Please try again or email ca.refreshcleaning1@gmail.com.'
+      },
+      es: {
+        'meta.title': 'California Refresh Cleaning Service — Limpieza del hogar amable y confiable en el Condado de San Luis Obispo',
+        'meta.description': 'Limpieza del hogar bilingüe, de propiedad femenina, en el Condado de San Luis Obispo. Visitas recurrentes semanales, quincenales y mensuales. De Yesenia G. — amable, detallista y enfocada en el cliente.',
+        'nav.about': 'Sobre mí',
+        'nav.services': 'Servicios',
+        'nav.area': 'Zona de servicio',
+        'nav.cta': 'Pide cotización',
+        'hero.eyebrow': '<span class="eyebrow-dot"></span>Servimos al Condado de San Luis Obispo',
+        'hero.h1': 'Un hogar impecable, <span class="accent">sin complicaciones.</span>',
+        'hero.lede': 'Limpieza bilingüe y de propiedad femenina en todo el Condado de SLO. Trabajo honesto, trato amable y un hogar que se siente verdaderamente fresco — en cada visita.',
+        'hero.cta.primary': 'Pide tu cotización gratis <svg viewBox="0 0 24 24" fill="none" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>',
+        'hero.cta.secondary': 'Ver servicios',
+        'hero.meta.female': 'Propiedad femenina',
+        'hero.meta.spanish': 'Se habla español',
+        'hero.meta.free': 'Cotización gratis',
+        'about.placeholder': 'Aquí va una foto amable de Yesenia',
+        'about.eyebrow': '<span class="eyebrow-dot"></span>Conoce a tu profesional',
+        'about.h2': 'Hola, soy <span class="accent">Yesenia.</span>',
+        'about.p1': 'Comencé California Refresh porque me encanta cómo se siente un hogar verdaderamente limpio — tranquilo, acogedor y listo para lo que el día traiga. Pongo cuidado y atención en cada trabajo, y trato tu casa como me gustaría que trataran la mía.',
+        'about.p2': 'Soy bilingüe (inglés y español), suficientemente pequeña para darte un trato personal, y suficientemente confiable para que veas la misma cara amable en cada visita.',
+        'badge.female': 'Propiedad femenina',
+        'badge.bilingual': 'Bilingüe',
+        'badge.local': 'Local del Condado de SLO',
+        'badge.customer': 'Cliente primero',
+        'services.eyebrow': '<span class="eyebrow-dot"></span>Lo que hago',
+        'services.h2': 'Limpieza recurrente del hogar, bien hecha.',
+        'services.lede': 'Un solo servicio, hecho a fondo — mantén tu hogar consistentemente fresco con un horario que te funcione.',
+        'service.tag': 'Más popular',
+        'service.title': 'Limpieza recurrente estándar',
+        'service.desc': 'Visitas semanales, quincenales o mensuales. La misma persona de confianza, cada vez, con todo lo que tu hogar necesita para mantenerse en orden y bien cuidado.',
+        'service.list.kitchen': 'Cocinas y electrodomésticos (exterior)',
+        'service.list.bathroom': 'Baños completos',
+        'service.list.dust': 'Polvo y superficies',
+        'service.list.vacuum': 'Aspirado y trapeado',
+        'service.list.bedroom': 'Habitaciones y áreas comunes',
+        'service.list.trash': 'Basura y orden',
+        'service.cta': 'Pide tu cotización gratis',
+        'why.eyebrow': '<span class="eyebrow-dot"></span>Por qué California Refresh',
+        'why.h2': 'Limpieza con la que puedes contar.',
+        'why.1.title': 'Confiable y puntual',
+        'why.1.desc': 'La misma persona de confianza, el mismo horario, sin sorpresas.',
+        'why.2.title': 'Servicio bilingüe',
+        'why.2.desc': 'Inglés o español — háblame como te sientas más cómodo o cómoda.',
+        'why.3.title': 'Propiedad femenina',
+        'why.3.desc': 'Un negocio pequeño e independiente — apoyas a tu vecina, no a una cadena.',
+        'why.4.title': 'Toque personal',
+        'why.4.desc': 'Me tomo el tiempo de conocer tu casa. Los pequeños detalles importan — y yo los noto.',
+        'area.eyebrow': '<span class="eyebrow-dot"></span>Zona de servicio',
+        'area.h2': 'Limpiando con orgullo en todo el Condado de San Luis Obispo.',
+        'area.note': '¿No ves tu ciudad? Solo pregunta — con gusto viajo si encajamos bien.',
+        'contact.eyebrow': '<span class="eyebrow-dot"></span>Ponte en contacto',
+        'contact.h2': 'Pide tu cotización gratis.',
+        'contact.lede': 'Cuéntame un poco sobre tu hogar y lo que buscas. Te respondo dentro de un día hábil.',
+        'form.success': '¡Gracias por escribir! Te contacto dentro de un día hábil.',
+        'form.name': 'Nombre',
+        'form.phone': 'Teléfono',
+        'form.email': 'Correo electrónico',
+        'form.city': 'Ciudad',
+        'form.city.placeholder': 'p. ej. San Luis Obispo',
+        'form.frequency': 'Frecuencia de limpieza',
+        'form.freq.notsure': 'Aún no estoy seguro',
+        'form.freq.weekly': 'Semanal',
+        'form.freq.biweekly': 'Quincenal',
+        'form.freq.monthly': 'Mensual',
+        'form.freq.onetime': 'Una sola vez',
+        'form.message': 'Cuéntame sobre tu hogar',
+        'form.message.placeholder': 'Habitaciones, baños, metros cuadrados si los conoces, y cualquier cosa especial que deba saber.',
+        'form.note': 'Te respondo dentro de un día hábil.',
+        'form.send': 'Enviar solicitud <svg viewBox="0 0 24 24" fill="none" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>',
+        'footer.tagline': 'Limpieza del hogar amable y confiable en todo el Condado de San Luis Obispo. De Yesenia G.',
+        'footer.explore': 'Explorar',
+        'footer.contact': 'Contacto',
+        'footer.quote': 'Pedir cotización',
+        'footer.copyright.prefix': '©',
+        'footer.copyright': 'California Refresh Cleaning Service. Todos los derechos reservados.',
+        'footer.made': 'Hecho con cariño en el Condado de San Luis Obispo.',
+        'form.error.fail': 'Algo salió mal al enviar tu mensaje. Por favor intenta de nuevo o escribe a ca.refreshcleaning1@gmail.com.',
+        'form.error.network': 'Error de red. Por favor intenta de nuevo o escribe a ca.refreshcleaning1@gmail.com.'
+      }
+    };
+
+    const STORAGE_KEY = 'cr_lang';
+
+    function getInitialLang() {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored === 'en' || stored === 'es') return stored;
+      const browser = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      return browser.startsWith('es') ? 'es' : 'en';
+    }
+
+    function applyLang(lang) {
+      const dict = translations[lang] || translations.en;
+      // Update <html lang>
+      document.documentElement.lang = lang;
+      // Update <title>
+      if (dict['meta.title']) document.title = dict['meta.title'];
+      // Update meta description
+      const desc = document.querySelector('meta[name="description"]');
+      if (desc && dict['meta.description']) desc.setAttribute('content', dict['meta.description']);
+      // Replace text on data-i18n elements
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const key = el.getAttribute('data-i18n');
+        if (key in dict) el.innerHTML = dict[key];
+      });
+      // Replace placeholders
+      document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (key in dict) el.setAttribute('placeholder', dict[key]);
+      });
+      // Update toggle button states
+      document.querySelectorAll('.lang-toggle button[data-lang]').forEach((btn) => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+      // Persist
+      localStorage.setItem(STORAGE_KEY, lang);
+    }
+
+    // Wire up toggle clicks
+    document.querySelectorAll('.lang-toggle button[data-lang]').forEach((btn) => {
+      btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+    });
+
+    // Apply initial language
+    applyLang(getInitialLang());
+
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -961,10 +1205,12 @@
           success.classList.add('show');
           success.scrollIntoView({ behavior: 'smooth', block: 'center' });
         } else {
-          alert('Something went wrong sending your message. Please try again or email ca.refreshcleaning1@gmail.com.');
+          const lang = localStorage.getItem(STORAGE_KEY) || 'en';
+          alert((translations[lang] || translations.en)['form.error.fail']);
         }
       } catch (err) {
-        alert('Network error. Please try again or email ca.refreshcleaning1@gmail.com.');
+        const lang = localStorage.getItem(STORAGE_KEY) || 'en';
+        alert((translations[lang] || translations.en)['form.error.network']);
       }
     });
   </script>
