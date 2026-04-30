@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>California Refresh Cleaning Service — Friendly, Reliable Home Cleaning in San Luis Obispo County</title>
-  <meta name="description" content="Bilingual, female-owned home cleaning in San Luis Obispo County. Recurring weekly, bi-weekly, and monthly cleans. Owned by Yesenia G. — friendly, thorough, customer-first." />
-  <meta name="keywords" content="house cleaning San Luis Obispo, home cleaning SLO County, bilingual cleaning service, recurring house cleaning, Paso Robles cleaning, Atascadero cleaning, Pismo Beach cleaning, Arroyo Grande cleaning, female-owned cleaning service, Spanish-speaking cleaners" />
+  <meta name="description" content="Bilingual, female-owned cleaning in San Luis Obispo County. Recurring home cleans, window cleaning, move-in / move-out, and Airbnb turnovers. Owned by Yesenia G. — friendly, thorough, customer-first." />
+  <meta name="keywords" content="house cleaning San Luis Obispo, window cleaning SLO, move-in cleaning, move-out cleaning, Airbnb cleaning San Luis Obispo, vacation rental turnover cleaning, home cleaning SLO County, bilingual cleaning service, recurring house cleaning, Paso Robles cleaning, Atascadero cleaning, Pismo Beach cleaning, Arroyo Grande cleaning, female-owned cleaning service, Spanish-speaking cleaners" />
   <meta name="author" content="California Refresh Cleaning Service" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#1B5BAA" />
@@ -19,7 +19,7 @@
 
   <!-- Open Graph / social preview -->
   <meta property="og:title" content="California Refresh Cleaning Service — San Luis Obispo County" />
-  <meta property="og:description" content="Bilingual, female-owned home cleaning in San Luis Obispo County. Reliable weekly, bi-weekly, and monthly cleans." />
+  <meta property="og:description" content="Bilingual, female-owned cleaning in San Luis Obispo County. Recurring home cleans, window cleaning, move-in / move-out, and Airbnb turnovers." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.californiarefresh.com/" />
   <meta property="og:site_name" content="California Refresh Cleaning Service" />
@@ -31,7 +31,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="California Refresh Cleaning Service — San Luis Obispo County" />
-  <meta name="twitter:description" content="Bilingual, female-owned home cleaning in San Luis Obispo County." />
+  <meta name="twitter:description" content="Recurring home cleans, window cleaning, move-in / move-out, and Airbnb turnovers in San Luis Obispo County." />
   <meta name="twitter:image" content="https://www.californiarefresh.com/assets/logo-full.png" />
   <meta name="twitter:image:alt" content="California Refresh Cleaning Service logo" />
 
@@ -43,7 +43,7 @@
     "@id": "https://www.californiarefresh.com/#business",
     "name": "California Refresh Cleaning Service",
     "alternateName": "California Refresh",
-    "description": "Bilingual, female-owned home cleaning service in San Luis Obispo County, California. Recurring weekly, bi-weekly, and monthly cleans.",
+    "description": "Bilingual, female-owned cleaning service in San Luis Obispo County, California. Recurring home cleans, window cleaning, move-in / move-out cleaning, and Airbnb / short-term rental turnovers.",
     "url": "https://www.californiarefresh.com/",
     "image": "https://www.californiarefresh.com/assets/logo-full.png",
     "logo": "https://www.californiarefresh.com/assets/logo-full.png",
@@ -85,6 +85,33 @@
           "name": "Recurring Home Cleaning",
           "serviceType": "House cleaning",
           "description": "Standard recurring home cleaning on a weekly, bi-weekly, or monthly schedule."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Window Cleaning",
+          "serviceType": "Window cleaning",
+          "description": "Streak-free interior and exterior window cleaning, including tracks, sills, and screen dusting."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Move-In / Move-Out Cleaning",
+          "serviceType": "Move-out cleaning",
+          "description": "Top-to-bottom deep cleaning for empty homes during a move, including inside cabinets, fridge, oven, and baseboards."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Airbnb & Short-Term Rental Cleaning",
+          "serviceType": "Vacation rental turnover cleaning",
+          "description": "Reliable turnover cleans between guests for Airbnb and short-term rentals, including linen changes and restocking basics."
         }
       }
     ]
@@ -540,6 +567,70 @@
     }
     .check svg { width: 10px; height: 10px; color: var(--accent-dark); }
 
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 28px;
+    }
+    @media (max-width: 900px) {
+      .service-grid {
+        grid-template-columns: 1fr;
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    .service-mini {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+    }
+    .service-mini .service-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+    .service-mini .service-icon svg { width: 24px; height: 24px; }
+    .service-mini.tone-blue .service-icon { background: var(--primary-soft); color: var(--primary); }
+    .service-mini.tone-gold .service-icon { background: rgba(232,154,45,0.15); color: var(--gold); }
+    .service-mini.tone-green .service-icon { background: rgba(95,186,72,0.15); color: var(--green); }
+    .service-mini h3 { font-size: 1.15rem; margin-bottom: 6px; }
+    .service-mini > p { font-size: 0.93rem; margin: 0 0 16px; }
+    .service-mini ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .service-mini ul li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+    }
+    .service-mini .mini-cta {
+      margin-top: auto;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .service-mini .mini-cta:hover { color: var(--primary-dark); }
+    .service-mini .mini-cta svg { width: 14px; height: 14px; transition: transform 0.15s; }
+    .service-mini .mini-cta:hover svg { transform: translateX(3px); }
+
     /* ---------- WHY ---------- */
     .why {
       background: var(--bg-soft);
@@ -826,9 +917,9 @@
   <section id="services">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow" data-i18n="services.eyebrow"><span class="eyebrow-dot"></span>What I do</span>
-        <h2 data-i18n="services.h2">Recurring home cleans, done right.</h2>
-        <p data-i18n="services.lede">One service, done thoroughly — keep your home consistently fresh on a schedule that works for you.</p>
+        <span class="eyebrow" data-i18n="services.eyebrow"><span class="eyebrow-dot"></span>What we do</span>
+        <h2 data-i18n="services.h2">Cleaning services, tailored to your home.</h2>
+        <p data-i18n="services.lede">From recurring home cleans to deep move-in cleans, sparkling windows, and Airbnb turnovers — pick what fits, and we'll handle the rest.</p>
       </div>
 
       <div class="service-card">
@@ -853,6 +944,74 @@
           <div style="margin-top: 24px;">
             <a href="#contact" class="btn btn-primary" data-i18n="service.cta">Request a Free Quote</a>
           </div>
+        </div>
+      </div>
+
+      <div class="service-grid">
+        <!-- Window Cleaning -->
+        <div class="service-mini tone-blue">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <path d="M3 12h18M12 3v18"/>
+            </svg>
+          </div>
+          <h3 data-i18n="service2.title">Window Cleaning</h3>
+          <p data-i18n="service2.desc">Streak-free interior and exterior windows that let the California sunshine in. Add to a recurring visit or book on its own.</p>
+          <ul>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> <span data-i18n="service2.list.interior">Interior glass</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> <span data-i18n="service2.list.exterior">Exterior glass</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> <span data-i18n="service2.list.tracks">Tracks &amp; sills wiped</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> <span data-i18n="service2.list.screens">Screens dusted</span></li>
+          </ul>
+          <a href="#contact" class="mini-cta" data-i18n="service2.cta">
+            Book Window Cleaning
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Move-In / Move-Out -->
+        <div class="service-mini tone-gold">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              <path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12"/>
+            </svg>
+          </div>
+          <h3 data-i18n="service3.title">Move-In / Move-Out Cleaning</h3>
+          <p data-i18n="service3.desc">A deep, top-to-bottom clean for an empty home — perfect for a fresh start, or to leave the place spotless for the next family.</p>
+          <ul>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> <span data-i18n="service3.list.cabinets">Inside cabinets &amp; drawers</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> <span data-i18n="service3.list.fridge">Inside fridge &amp; oven</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> <span data-i18n="service3.list.baseboards">Baseboards &amp; doors</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> <span data-i18n="service3.list.floors">Floors deep-cleaned</span></li>
+          </ul>
+          <a href="#contact" class="mini-cta" data-i18n="service3.cta">
+            Book Move-In / Out
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Airbnb / Short-term Rental -->
+        <div class="service-mini tone-green">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <path d="M9 22V12h6v10"/>
+            </svg>
+          </div>
+          <h3 data-i18n="service4.title">Airbnb &amp; Short-Term Rentals</h3>
+          <p data-i18n="service4.desc">Reliable turnover cleans between guests — fresh linens, restocked basics, and a five-star ready space, every time.</p>
+          <ul>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> <span data-i18n="service4.list.turnover">Guest-ready turnovers</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> <span data-i18n="service4.list.linens">Linens &amp; beds changed</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> <span data-i18n="service4.list.restock">Restock toiletries &amp; basics</span></li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> <span data-i18n="service4.list.flexible">Flexible same-day scheduling</span></li>
+          </ul>
+          <a href="#contact" class="mini-cta" data-i18n="service4.cta">
+            Book a Turnover
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
         </div>
       </div>
     </div>
@@ -977,19 +1136,29 @@
           </div>
           <div class="form-row">
             <div class="field">
+              <label for="serviceType" data-i18n="form.serviceType">Service type</label>
+              <select id="serviceType" name="serviceType">
+                <option value="" data-i18n="form.svc.notsure">Not sure yet</option>
+                <option data-i18n="form.svc.recurring">Recurring home cleaning</option>
+                <option data-i18n="form.svc.window">Window cleaning</option>
+                <option data-i18n="form.svc.movein">Move-in / move-out cleaning</option>
+                <option data-i18n="form.svc.airbnb">Airbnb / short-term rental turnover</option>
+              </select>
+            </div>
+            <div class="field">
               <label for="city" data-i18n="form.city">City</label>
               <input id="city" name="city" type="text" placeholder="e.g. San Luis Obispo" data-i18n-placeholder="form.city.placeholder" />
             </div>
-            <div class="field">
-              <label for="frequency" data-i18n="form.frequency">Cleaning frequency</label>
-              <select id="frequency" name="frequency">
-                <option value="" data-i18n="form.freq.notsure">Not sure yet</option>
-                <option data-i18n="form.freq.weekly">Weekly</option>
-                <option data-i18n="form.freq.biweekly">Bi-weekly</option>
-                <option data-i18n="form.freq.monthly">Monthly</option>
-                <option data-i18n="form.freq.onetime">One-time</option>
-              </select>
-            </div>
+          </div>
+          <div class="field">
+            <label for="frequency" data-i18n="form.frequency">Cleaning frequency</label>
+            <select id="frequency" name="frequency">
+              <option value="" data-i18n="form.freq.notsure">Not sure yet</option>
+              <option data-i18n="form.freq.weekly">Weekly</option>
+              <option data-i18n="form.freq.biweekly">Bi-weekly</option>
+              <option data-i18n="form.freq.monthly">Monthly</option>
+              <option data-i18n="form.freq.onetime">One-time</option>
+            </select>
           </div>
           <div class="field">
             <label for="message"><span data-i18n="form.message">Tell us about your home</span> <span class="req">*</span></label>
