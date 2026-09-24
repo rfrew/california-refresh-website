@@ -257,6 +257,11 @@
       font-weight: 600 !important;
     }
     .nav-cta:hover { background: var(--primary-dark); }
+    .nav-cta .cta-short { display: none; }
+    @media (max-width: 480px) {
+      .nav-cta .cta-long { display: none; }
+      .nav-cta .cta-short { display: inline; }
+    }
 
     .lang-toggle {
       display: inline-flex;
@@ -785,7 +790,7 @@
       display: inline-block;
       margin-bottom: 16px;
     }
-    .footer-logo img { width: 180px; height: auto; display: block; }
+    .footer-logo img { width: 170px; height: auto; display: block; }
     .footer-grid {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr;
@@ -807,6 +812,7 @@
     }
     footer a { color: rgba(255, 255, 255, 0.85); text-decoration: none; display: block; padding: 4px 0; }
     footer a:hover { color: var(--gold); }
+    footer p { color: rgba(255, 255, 255, 0.7); }
     .footer-bottom {
       padding-top: 24px;
       display: flex;
@@ -823,7 +829,7 @@
   <!-- ========== NAV ========== -->
   <nav class="nav">
     <div class="nav-inner">
-      <a href="/" class="brand" aria-label="California Refresh Cleaning Service home">
+      <a href="/es/" class="brand" aria-label="Inicio de California Refresh Cleaning Service">
         <img src="/assets/favicon.png" alt="" class="brand-icon" />
         <span class="brand-name">
           <span class="top">California</span>
@@ -834,7 +840,7 @@
         <a href="#about">Sobre mí</a>
         <a href="#services">Servicios</a>
         <a href="#area">Zona de servicio</a>
-        <a href="#contact" class="nav-cta">Pide cotización</a>
+        <a href="#contact" class="nav-cta"><span class="cta-long">Pide cotización</span><span class="cta-short">Cotizar</span></a>
         <div class="lang-toggle" role="group" aria-label="Language / Idioma">
           <a href="/" hreflang="en" rel="alternate" aria-label="View in English">EN</a>
           <a href="/es/" class="active" hreflang="es" aria-current="page" aria-label="Español">ES</a>
@@ -879,7 +885,7 @@
   <!-- ========== ABOUT ========== -->
   <section class="about" id="about">
     <div class="container about-grid">
-      <div class="about-portrait" role="img" aria-label="Photo of Yesenia G., owner">
+      <div class="about-portrait" role="img" aria-label="Foto de Yesenia G., la dueña">
         <div class="placeholder-note" data-i18n="about.placeholder">Aquí va una foto amable de Yesenia</div>
       </div>
       <div>
@@ -1103,7 +1109,6 @@
           id="quoteForm"
           action="https://formspree.io/f/mzdworbp"
           method="POST"
-          novalidate
         >
           <div class="form-row">
             <div class="field">
@@ -1147,7 +1152,7 @@
           </div>
           <div class="field">
             <label for="message"><span data-i18n="form.message">Cuéntanos sobre tu hogar</span> <span class="req">*</span></label>
-            <textarea id="message" name="message" required placeholder="Habitaciones, baños, metros cuadrados si los conoces, y cualquier cosa especial que debamos saber." data-i18n-placeholder="form.message.placeholder"></textarea>
+            <textarea id="message" name="message" required placeholder="Habitaciones, baños, pies cuadrados si los conoces, y cualquier cosa especial que debamos saber." data-i18n-placeholder="form.message.placeholder"></textarea>
           </div>
 
           <!-- Honeypot to deter bots -->

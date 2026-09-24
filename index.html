@@ -256,6 +256,11 @@
       font-weight: 600 !important;
     }
     .nav-cta:hover { background: var(--primary-dark); }
+    .nav-cta .cta-short { display: none; }
+    @media (max-width: 480px) {
+      .nav-cta .cta-long { display: none; }
+      .nav-cta .cta-short { display: inline; }
+    }
 
     .lang-toggle {
       display: inline-flex;
@@ -784,7 +789,7 @@
       display: inline-block;
       margin-bottom: 16px;
     }
-    .footer-logo img { width: 180px; height: auto; display: block; }
+    .footer-logo img { width: 170px; height: auto; display: block; }
     .footer-grid {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr;
@@ -806,6 +811,7 @@
     }
     footer a { color: rgba(255, 255, 255, 0.85); text-decoration: none; display: block; padding: 4px 0; }
     footer a:hover { color: var(--gold); }
+    footer p { color: rgba(255, 255, 255, 0.7); }
     .footer-bottom {
       padding-top: 24px;
       display: flex;
@@ -1102,7 +1108,6 @@
           id="quoteForm"
           action="https://formspree.io/f/mzdworbp"
           method="POST"
-          novalidate
         >
           <div class="form-row">
             <div class="field">
