@@ -6,9 +6,11 @@ Live at https://www.californiarefresh.com/ (English) and https://www.californiar
 ## Structure
 - `index.html` — English page (HTML/CSS/JS inlined)
 - `es/index.html` — Spanish page. Its `<style>` block is identical to the English page's; keep the two in sync.
+- `404.html`, `es/404.html` — "page not found" pages (English, and Spanish for anything under `/es/`)
 - `assets/` — logos and favicon
 - `robots.txt`, `sitemap.xml` — search engine files
-- `wrangler.jsonc` — Cloudflare Workers config (static assets, served from the repo root)
+- `wrangler.jsonc` — Cloudflare Workers config: static assets served from the repo root; unknown paths get the
+  nearest `404.html` with a 404 status (`not_found_handling`)
 - `.assetsignore` — repo files that must not be published (`.git`, this README, config files)
 
 ## Development
@@ -17,6 +19,13 @@ No build step. The pages use root-relative paths (`/assets/...`), so serve the f
 ```sh
 python3 -m http.server 8000   # then open http://localhost:8000/ and /es/
 ```
+
+`npx wrangler dev` restarts in a loop here because the assets directory is the repo root (it watches its own
+`.wrangler/` folder). To test Cloudflare behaviour such as the 404 pages, copy the site files into a `public/` folder in a scratch directory
+with a copy of `wrangler.jsonc` pointing `assets.directory` at `./public`.
+
+The redirect from `californiarefresh.com` to `www.californiarefresh.com` is a Cloudflare Redirect Rule in the
+business's account (Rules → Redirect Rules), not part of this repo.
 
 ## Deployment
 Hosted on Cloudflare Workers (static assets), Worker name `california-refresh-website`.

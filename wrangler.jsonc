@@ -6,7 +6,9 @@
     "enabled": true
   },
   "assets": {
-    "directory": "."
+    "directory": ".",
+    // Unknown paths get the nearest 404.html (es/404.html under /es/) with a 404 status.
+    "not_found_handling": "404-page"
   },
   "compatibility_flags": [
     "nodejs_compat"
