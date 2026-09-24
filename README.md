@@ -20,8 +20,12 @@ python3 -m http.server 8000   # then open http://localhost:8000/ and /es/
 
 ## Deployment
 Hosted on Cloudflare Workers (static assets), Worker name `california-refresh-website`.
-Workers Builds is connected to this repo: every push to `main` deploys to production in about a minute.
-Check a deploy in the commit's GitHub checks ("Workers Builds") or in the Cloudflare dashboard.
+Every push to `main` deploys automatically:
+
+- `.github/workflows/deploy.yml` (GitHub Actions) deploys to the business's Cloudflare account, using the
+  repo secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`. Re-run it from the Actions tab if needed.
+- During the handoff, Workers Builds in Rob's Cloudflare account also deploys the same commit. That
+  connection is removed once the domain has moved to the business's account.
 
 The domain `californiarefresh.com` is registered with Cloudflare Registrar; DNS and Email Routing are on Cloudflare.
 
