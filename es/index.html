@@ -637,6 +637,28 @@
     .service-mini .mini-cta svg { width: 14px; height: 14px; transition: transform 0.15s; }
     .service-mini .mini-cta:hover svg { transform: translateX(3px); }
 
+    /* ---------- PRODUCTS ---------- */
+    .products {
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    @media (max-width: 600px) {
+      .products-grid { grid-template-columns: 1fr; }
+    }
+    .products-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.82rem;
+      max-width: 640px;
+      margin: 28px auto 0;
+    }
+
     /* ---------- WHY ---------- */
     .why {
       background: var(--bg-soft);
@@ -1021,6 +1043,48 @@
           </a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ========== PRODUCTS ========== -->
+  <section class="products" id="products">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="products.eyebrow"><span class="eyebrow-dot"></span>Los productos que usamos</span>
+        <h2 data-i18n="products.h2">Conoce con qué limpiamos.</h2>
+        <p data-i18n="products.lede">Limpiamos con productos Amway Home™. Esto es lo que Amway y la EPA de EE.&nbsp;UU. dicen de cuatro de ellos: el limpiador multiusos L.O.C.™ y los limpiadores de cocina, baño y vidrios.</p>
+      </div>
+      <div class="products-grid">
+        <div class="why-card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <h3 data-i18n="products.1.title">Reconocidos por Safer Choice de la EPA</h3>
+          <p data-i18n="products.1.desc">Los cuatro están en la lista Safer Choice de la EPA de EE.&nbsp;UU., que exige que cada ingrediente cumpla con criterios de la EPA para la salud humana y el medio ambiente.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+          </div>
+          <h3 data-i18n="products.2.title">Sin cloro ni fosfatos</h3>
+          <p data-i18n="products.2.desc">Según Amway, los cuatro no contienen cloro ni fosfatos, y su limpiador de vidrios no lleva amoníaco.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.53a2 2 0 0 1-.21.9L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.07-10.12a2 2 0 0 1-.21-.9V2"/><path d="M8.5 2h7M7 16h10"/></svg>
+          </div>
+          <h3 data-i18n="products.3.title">Fórmulas biodegradables</h3>
+          <p data-i18n="products.3.desc">Amway describe la fórmula de cada uno como biodegradable. Esto se refiere al limpiador en sí, no a la botella.</p>
+        </div>
+        <div class="why-card">
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+          </div>
+          <h3 data-i18n="products.4.title">Probados y transparentes</h3>
+          <p data-i18n="products.4.desc">Amway indica que los cuatro se sometieron a pruebas dermatológicas y de alergia, y publica los ingredientes de todos sus productos Amway Home™.</p>
+        </div>
+      </div>
+      <p class="products-note" data-i18n="products.note">La información de los productos proviene de las páginas de Amway y de la <a href="https://espanol.epa.gov/saferchoice/busque-productos-que-cumplan-con-la-norma-safer-choice" target="_blank" rel="noopener">lista de productos Safer Choice de la EPA de EE.&nbsp;UU.</a> El reconocimiento Safer Choice no es un respaldo de la EPA. Amway Home™ y L.O.C.™ son marcas comerciales de Amway. California Refresh es un servicio de limpieza independiente.</p>
     </div>
   </section>
 
