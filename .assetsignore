@@ -1,0 +1,9 @@
+# Files Wrangler must not publish as website assets (the whole repo root is the assets directory).
+.git
+.github
+.gitignore
+.assetsignore
+.wrangler
+node_modules
+README.md
+wrangler.jsonc
