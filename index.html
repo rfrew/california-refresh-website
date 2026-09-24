@@ -150,6 +150,7 @@
     }
 
     * { box-sizing: border-box; }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
@@ -650,6 +651,24 @@
     @media (max-width: 600px) {
       .products-grid { grid-template-columns: 1fr; }
     }
+    .products-cta {
+      text-align: center;
+      margin: 36px auto 0;
+      max-width: 560px;
+    }
+    .products-cta .cta-lead {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+    .products-cta .btn svg { width: 16px; height: 16px; }
+    .products-disclosure {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      margin: 12px 0 0;
+    }
     .products-note {
       text-align: center;
       color: var(--muted);
@@ -1049,41 +1068,49 @@
   <section class="products" id="products">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow" data-i18n="products.eyebrow"><span class="eyebrow-dot"></span>The products we use</span>
-        <h2 data-i18n="products.h2">Know what we clean with.</h2>
-        <p data-i18n="products.lede">We clean with Amway Home™ products. Here's what Amway and the U.S. EPA say about four of them: the L.O.C.™ Multi-Purpose, Kitchen, Bathroom, and Glass Cleaners.</p>
+        <span class="eyebrow"><span class="eyebrow-dot"></span>The products we use</span>
+        <h2>Know what we clean with.</h2>
+        <p>In the kitchen, we clean with Amway Home™ Kitchen Cleaner. Here's what Amway and the U.S. EPA say about it.</p>
       </div>
       <div class="products-grid">
         <div class="why-card">
           <div class="icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
           </div>
-          <h3 data-i18n="products.1.title">EPA Safer Choice recognized</h3>
-          <p data-i18n="products.1.desc">All four are on the U.S. EPA's Safer Choice list, which requires every ingredient to meet EPA criteria for human health and the environment.</p>
+          <h3>EPA Safer Choice recognized</h3>
+          <p>It's on the U.S. EPA's Safer Choice list, which requires every ingredient to meet EPA criteria for human health and the environment.</p>
         </div>
         <div class="why-card">
           <div class="icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
           </div>
-          <h3 data-i18n="products.2.title">No chlorine or phosphates</h3>
-          <p data-i18n="products.2.desc">Amway lists all four as free of chlorine and phosphates, and its Glass Cleaner is ammonia&#8209;free.</p>
+          <h3>No chlorine or phosphates</h3>
+          <p>Amway lists it as free of chlorine and phosphates.</p>
         </div>
         <div class="why-card">
           <div class="icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.53a2 2 0 0 1-.21.9L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.07-10.12a2 2 0 0 1-.21-.9V2"/><path d="M8.5 2h7M7 16h10"/></svg>
           </div>
-          <h3 data-i18n="products.3.title">Biodegradable formulas</h3>
-          <p data-i18n="products.3.desc">Amway describes each one's formula as biodegradable — meaning the cleaner itself, not the bottle it comes in.</p>
+          <h3>Biodegradable formula</h3>
+          <p>Amway describes its formula as biodegradable — meaning the cleaner itself, not the bottle it comes in.</p>
         </div>
         <div class="why-card">
           <div class="icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
           </div>
-          <h3 data-i18n="products.4.title">Tested and transparent</h3>
-          <p data-i18n="products.4.desc">Amway says all four are dermatologist and allergy tested, and it publishes the ingredients for every Amway Home™ product.</p>
+          <h3>Tested and transparent</h3>
+          <p>Amway says it's dermatologist and allergy tested, and it publishes the full ingredient list.</p>
         </div>
       </div>
-      <p class="products-note" data-i18n="products.note">Product details come from Amway's product pages and the <a href="https://www.epa.gov/saferchoice/products" target="_blank" rel="noopener">U.S. EPA's Safer Choice product list</a>. Safer Choice recognition is not an EPA endorsement. Amway Home™ and L.O.C.™ are trademarks of Amway. California Refresh is an independent cleaning service.</p>
+      <div class="products-cta">
+        <p class="cta-lead">Like what we use?</p>
+        <a href="https://www.amway.com/myshop/marcosgasparcalixto" class="btn btn-primary" target="_blank" rel="sponsored noopener" aria-describedby="products-disclosure">
+          Shop Amway Home™ products <span class="visually-hidden">(opens Amway's site in a new tab)</span>
+          <svg viewBox="0 0 24 24" fill="none" width="16" height="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+        </a>
+        <p class="products-disclosure" id="products-disclosure">This is our shop as independent Amway Business Owners, so we earn a commission on purchases made through this link.</p>
+      </div>
+      <p class="products-note">Product details come from Amway's product page and the <a href="https://www.epa.gov/saferchoice/products" target="_blank" rel="noopener">U.S. EPA's Safer Choice product list</a>. Safer Choice recognition is not an EPA endorsement. Amway Home™ is a trademark of Amway.</p>
     </div>
   </section>
 
