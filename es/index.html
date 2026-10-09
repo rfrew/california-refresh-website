@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>California Refresh Cleaning Service — Limpieza del hogar amable y confiable en el Condado de San Luis Obispo</title>
-  <meta name="description" content="Limpieza bilingüe y de propiedad femenina en el Condado de San Luis Obispo. Limpieza recurrente, ventanas, mudanza de entrada/salida y limpieza de Airbnb. De Yesenia G. — amable, detallista y enfocada en el cliente." />
+  <meta name="description" content="Limpieza bilingüe y de propiedad femenina en el Condado de San Luis Obispo. Limpieza recurrente, ventanas, mudanza de entrada/salida y limpieza de Airbnb. De Yesenia y Oscar — amable, detallista y enfocada en el cliente." />
   <meta name="keywords" content="limpieza del hogar San Luis Obispo, limpieza de ventanas SLO, limpieza de mudanza, limpieza Airbnb, limpieza alquileres vacacionales, servicio de limpieza Condado SLO, limpieza bilingüe, limpieza recurrente, limpieza Paso Robles, limpieza Atascadero, limpieza Pismo Beach, limpieza Arroyo Grande, limpieza de propiedad femenina, limpieza en español" />
   <meta name="author" content="California Refresh Cleaning Service" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -456,26 +456,54 @@
       .about-grid { grid-template-columns: 1fr; gap: 32px; }
     }
     .about-portrait {
-      aspect-ratio: 4/5;
+      aspect-ratio: 2/3;
       border-radius: var(--radius-lg);
-      background:
-        linear-gradient(135deg, rgba(31,163,154,0.45), rgba(27,91,170,0.5)),
-        repeating-linear-gradient(45deg, rgba(255,255,255,0.06) 0 2px, transparent 2px 12px);
       box-shadow: var(--shadow-md);
-      position: relative;
       overflow: hidden;
-      display: grid;
-      place-items: center;
+      background: var(--teal-soft);
     }
-    .about-portrait .placeholder-note {
-      background: rgba(255,255,255,0.92);
+    .about-portrait img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @media (max-width: 800px) {
+      .about-portrait { max-width: 420px; margin: 0 auto; }
+    }
+    .about-photos {
+      display: grid;
+      grid-template-columns: 16fr 9fr;
+      gap: 20px;
+      margin-top: 48px;
+    }
+    @media (max-width: 640px) {
+      .about-photos { grid-template-columns: 1fr; }
+    }
+    .about-photos figure {
+      margin: 0;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      background: var(--card);
+    }
+    .about-photos img,
+    .products-photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .about-photos figcaption {
       padding: 12px 18px;
-      border-radius: 999px;
-      font-size: 0.85rem;
+      font-size: 0.88rem;
       color: var(--ink-soft);
-      font-weight: 500;
-      text-align: center;
-      max-width: 80%;
+    }
+    .products-photo {
+      max-width: 860px;
+      margin: 0 auto 28px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
     }
     .about h2 .accent {
       color: var(--primary);
@@ -926,19 +954,22 @@
   <!-- ========== ABOUT ========== -->
   <section class="about" id="about">
     <div class="container about-grid">
-      <div class="about-portrait" role="img" aria-label="Foto de Yesenia G., la dueña">
-        <div class="placeholder-note" data-i18n="about.placeholder">Aquí va una foto amable de Yesenia</div>
+      <div class="about-portrait">
+        <picture>
+          <source type="image/webp" srcset="/assets/photos/owners-640.webp 640w, /assets/photos/owners-1100.webp 1100w" sizes="(max-width: 800px) 90vw, 40vw" />
+          <img src="/assets/photos/owners-640.jpg" srcset="/assets/photos/owners-640.jpg 640w, /assets/photos/owners-1100.jpg 1100w" sizes="(max-width: 800px) 90vw, 40vw" width="640" height="960" fetchpriority="low" alt="Yesenia y Oscar, dueños de California Refresh, juntos frente a un mural colorido" />
+        </picture>
       </div>
       <div>
-        <span class="eyebrow" data-i18n="about.eyebrow"><span class="eyebrow-dot"></span>Conoce a la dueña</span>
-        <h2 data-i18n="about.h2">Hola, soy <span class="accent">Yesenia.</span></h2>
+        <span class="eyebrow" data-i18n="about.eyebrow"><span class="eyebrow-dot"></span>Conoce a los dueños</span>
+        <h2 data-i18n="about.h2">Hola, somos <span class="accent">Yesenia y Oscar.</span></h2>
         <p data-i18n="about.p1">
-          Comencé California Refresh porque me encanta cómo se siente un hogar verdaderamente limpio — tranquilo, acogedor y listo para lo que el día traiga. Pongo cuidado y atención en cada trabajo, y nuestro equipo trata tu casa como me gustaría que trataran la mía.
+          Yesenia comenzó California Refresh porque le encanta cómo se siente un hogar verdaderamente limpio — tranquilo, acogedor y listo para lo que el día traiga. Juntos ponemos cuidado y atención en cada trabajo, y nuestro equipo trata tu casa como nos gustaría que trataran la nuestra.
         </p>
         <p data-i18n="about.p2">
-          Hoy lidero un equipo dedicado de personas de limpieza, todas entrenadas con el estándar que establecí desde el principio — cuidadosas, consistentes y respetuosas con tu hogar. Buscamos asignarte una persona dedicada que aprenda tu casa, para que veas la misma cara amable en cada visita recurrente.
+          Hoy lideramos un equipo dedicado de personas de limpieza, todas entrenadas con el estándar que Yesenia estableció desde el principio — cuidadosas, consistentes y respetuosas con tu hogar. Buscamos asignarte una persona dedicada que aprenda tu casa, para que veas la misma cara amable en cada visita recurrente.
         </p>
-        <div class="signature">— Yesenia G.</div>
+        <div class="signature">— Yesenia y Oscar</div>
         <div class="badge-row">
           <span class="badge">
             <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
@@ -958,6 +989,22 @@
           </span>
         </div>
       </div>
+    </div>
+    <div class="container about-photos">
+      <figure>
+        <picture>
+          <source type="image/webp" srcset="/assets/photos/team-900.webp 900w, /assets/photos/team-1600.webp 1600w" sizes="(max-width: 640px) 92vw, 60vw" />
+          <img src="/assets/photos/team-900.jpg" srcset="/assets/photos/team-900.jpg 900w, /assets/photos/team-1600.jpg 1600w" sizes="(max-width: 640px) 92vw, 60vw" width="900" height="506" loading="lazy" decoding="async" alt="Cuatro integrantes del equipo de California Refresh con sus camisetas del logo frente a un mural" />
+        </picture>
+        <figcaption>El equipo de California Refresh.</figcaption>
+      </figure>
+      <figure>
+        <picture>
+          <source type="image/webp" srcset="/assets/photos/at-work-600.webp 600w, /assets/photos/at-work-1000.webp 1000w" sizes="(max-width: 640px) 92vw, 34vw" />
+          <img src="/assets/photos/at-work-600.jpg" srcset="/assets/photos/at-work-600.jpg 600w, /assets/photos/at-work-1000.jpg 1000w" sizes="(max-width: 640px) 92vw, 34vw" width="600" height="600" loading="lazy" decoding="async" alt="Oscar trapeando un pasillo con un cubo y una señal de piso mojado" />
+        </picture>
+        <figcaption>Oscar en el trabajo.</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -1072,6 +1119,12 @@
         <span class="eyebrow"><span class="eyebrow-dot"></span>Los productos que usamos</span>
         <h2>Conoce con qué limpiamos.</h2>
         <p>En la cocina usamos el limpiador de cocina Amway Home™ (Kitchen Cleaner). Esto es lo que Amway y la EPA de EE.&nbsp;UU. dicen de él.</p>
+      </div>
+      <div class="products-photo">
+        <picture>
+          <source type="image/webp" srcset="/assets/photos/products-900.webp 900w, /assets/photos/products-1700.webp 1700w" sizes="(max-width: 900px) 92vw, 860px" />
+          <img src="/assets/photos/products-900.jpg" srcset="/assets/photos/products-900.jpg 900w, /assets/photos/products-1700.jpg 1700w" sizes="(max-width: 900px) 92vw, 860px" width="900" height="450" loading="lazy" decoding="async" alt="Limpiadores Amway Home — limpiador de vidrios, de baño, de cocina y esponjas — sobre una roca en un arroyo" />
+        </picture>
       </div>
       <div class="products-grid">
         <div class="why-card">
@@ -1270,7 +1323,7 @@
             <img src="/assets/logo-white.png" alt="California Refresh Cleaning Service" />
           </div>
           <p style="margin-top: 12px; max-width: 360px;" data-i18n="footer.tagline">
-            Limpieza del hogar amable y confiable en todo el Condado de San Luis Obispo. De Yesenia G.
+            Limpieza del hogar amable y confiable en todo el Condado de San Luis Obispo. De Yesenia y Oscar.
           </p>
         </div>
         <div>

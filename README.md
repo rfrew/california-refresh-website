@@ -1,13 +1,13 @@
 # California Refresh Cleaning Service
 
-Marketing site for Yesenia G.'s home cleaning business in San Luis Obispo County.
+Marketing site for Yesenia and Oscar's home cleaning business in San Luis Obispo County.
 Live at https://www.californiarefresh.com/ (English) and https://www.californiarefresh.com/es/ (Spanish).
 
 ## Structure
 - `index.html` — English page (HTML/CSS/JS inlined)
 - `es/index.html` — Spanish page. Its `<style>` block is identical to the English page's; keep the two in sync.
 - `404.html`, `es/404.html` — "page not found" pages (English, and Spanish for anything under `/es/`)
-- `assets/` — logos and favicon
+- `assets/` — logos and favicon; `assets/photos/` holds web-sized JPEG/WebP exports of the owner, team and product photos (originals live on the NAS under `claude-work/Projects/Califonia Refresh`)
 - `robots.txt`, `sitemap.xml` — search engine files
 - `wrangler.jsonc` — Cloudflare Workers config: static assets served from the repo root; unknown paths get the
   nearest `404.html` with a 404 status (`not_found_handling`)
